@@ -1,10 +1,13 @@
-
+#include "Player.h"
 
 float Player::takeDamage(float damage)
 {
     float totalDamage = damage - m_shield.getStatusBoost();
 
-    return takeDamage(damage);
+    //decrease health based on damage
+    subtractHealth(totalDamage);
+
+    return totalDamage;
 }
 
 float Player::attack(Character* other)

@@ -1,20 +1,20 @@
 #pragma once
-#include "Item.h"
 #include "Character.h"
+#include "Item.h"
 
 class Player :
-     Character
+     public Character
 {
 public:
     Player() : Character() {}
     Player(const char* name, float health, float damage, float defense) :
-        Character(name, health, damage, defense);
+        Character(name, health, damage, defense) {};
 
     /// <summary>
     /// Adds the given item's stat boost to this player's total damage.
     /// </summary>
     /// <param name="item">The players new weapon.</param>
-    void equipWeapon(Item item);
+    void equipWeapon(Item item) { m_weapon = item; };
 
     /// <summary>
     /// Adds the given item's stat boost to this player's total defense.
@@ -51,4 +51,3 @@ private:
     Item m_weapon;
     Item m_shield;
 };
-

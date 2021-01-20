@@ -14,12 +14,19 @@ public:
 	/// </summary>
 	/// <param name="damage">The amount of damage to subtract from this character's health.</param>
 	/// <returns>The total damage dealt.</returns>
+	float subtractHealth(float damage);
+
+	/// <summary>
+	/// Subtracts health by the given damage amount.
+	/// </summary>
+	/// <param name="damage">The amount of damage to subtract from this character's health.</param>
+	/// <returns>The total damage dealt.</returns>
 	virtual float takeDamage(float damage);
 
 	/// <summary>
-	/// Callse the takeDamage function for the character passed in.
+	/// Calls the takeDamage function for the character passed in.
 	/// </summary>
-	/// <param name="other">The characterto deal damage to.</param>
+	/// <param name="other">The character to deal damage to.</param>
 	/// <returns>The total damage dealt.</returns>
 	virtual float attack(Character* other);
 
@@ -34,4 +41,3 @@ private:
 	float m_damage = 0;
 	float m_defense = 0;
 };
-
